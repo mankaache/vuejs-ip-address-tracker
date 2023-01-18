@@ -5,22 +5,22 @@
         <!-- flex item #1 -->
         <div class="flex flex-col">
             <h3 class="text-xs mb-2 uppercase">IP Address</h3>
-            <span class="text-xl font-bold" > 8.8.8.8</span>
+            <span class="text-xl font-bold" >{{ipinfo.address}}</span>
         </div>
         <!-- flex item #2 -->
         <div class="flex flex-col">
             <h3 class="text-xs mb-2 uppercase">Location</h3>
-            <span class="text-xl font-bold" > Cameroon</span>
+            <span class="text-xl font-bold" >{{ipinfo.state}}</span>
         </div>
          <!-- flex item #3  -->
         <div class="flex flex-col">
             <h3 class="text-xs mb-2 uppercase">TimeZone</h3>
-            <span class="text-xl font-bold" > Gmt +1</span>
+            <span class="text-xl font-bold" >UTC {{ipinfo.timezone}}</span>
         </div>
          <!-- flex item #4  -->
         <div class="flex flex-col">
             <h3 class="text-xs mb-2 uppercase">ISP</h3>
-            <span class="text-xl font-bold" >Google</span>
+            <span class="text-xl font-bold" >{{ipinfo.isp}}</span>
         </div>
     </div>
        
@@ -28,7 +28,7 @@
 
 <script>
     export default {
-        
+    props:['ipinfo']
     }
 </script>
 
