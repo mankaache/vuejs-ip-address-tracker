@@ -28,16 +28,29 @@
 
 <script>
 // @ is an alias to /src
-import IPInfo from '@/components/IPInfo.vue'
-// import leaflet from 'leaflet'
+import IPInfo from "@/components/IPInfo.vue";
+import leaflet from "leaflet";
+import { onMounted } from "vue";
 export default {
   name: "HomeView",
   components: {
-    IPInfo
+    IPInfo,
   },
-  setup(){
+  setup() {
+    let myMap;
+    onMounted(() => {
+      myMap = leaflet.map("map").setView([51.505, -0.09], 13);
 
-  }
+      leaflet
+        .tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution:
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            accessToken:"pk.eyJ1IjoibWFua2FhIiwiYSI6ImNsZDFtNjlieDAwMWUzbmxta3BtMTB2MGoifQ.zEc_i4r5htRLWh9IJiF9MQ"
+        })
+        .addTo(myMap);
+    });
+  },
 };
 </script>
 
