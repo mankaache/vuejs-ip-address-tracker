@@ -18,16 +18,21 @@
           ></i>
         </div>
       </div>
+      <!-- ip information box -->
+      <IPInfo />
     </div>
+    
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import IPInfo from '@/components/IPInfo.vue'
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    IPInfo
+  },
 };
 </script>
 
