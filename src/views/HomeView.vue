@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen max-h-screen">
     <!-- search / results -->
-    <div class="back flex justify-center relative px-4 pt-8 pb-32">
+    <div class="back z-20 flex justify-center relative px-4 pt-8 pb-32">
       <!-- search input -->
       <div class="w-full max-w-screen-sm">
         <h1 class="text-center text-white text-4xl font-bold pb-8">
@@ -21,18 +21,23 @@
       <!-- ip information box -->
       <IPInfo />
     </div>
-    
+    <!-- map -->
+    <div id="map" class="h-full z-10"></div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import IPInfo from '@/components/IPInfo.vue'
+// import leaflet from 'leaflet'
 export default {
   name: "HomeView",
   components: {
     IPInfo
   },
+  setup(){
+
+  }
 };
 </script>
 
